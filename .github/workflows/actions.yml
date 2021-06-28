@@ -1,0 +1,27 @@
+name: Tests
+on:
+  pull_request:
+    branches:
+      - develop
+      - master
+  push:
+    branches:
+      - develop
+      - master
+
+jobs:
+  actions:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Copia repositorio
+      uses: actions/checkout@v2
+    - name: Construye imagen
+      run: make --makefile=build/Makefile build
+    - name: Corre pruebas
+      run: make --makefile=build/Makefile tests
+    - name: Corre contenedor
+      run: make --makefile=build/Makefile up
+    - name: Verifica el formato
+      run: make --makefile=build/Makefile check
+    - name: Checa estado del servicio
+      run: make --makefile=build/Makefile check_status

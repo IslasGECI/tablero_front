@@ -1,0 +1,11 @@
+{
+  "name": "tablero_front",
+  "private": true,
+  "license": "ISC",
+  "scripts": {
+    "test": "yarn workspace public_html test"
+  },
+  "workspaces": [
+    "public_html"
+  ]
+}

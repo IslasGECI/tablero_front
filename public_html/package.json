@@ -1,0 +1,22 @@
+{
+  "name": "public_html",
+  "version": "0.0.0-development",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "prettier:check_html": "prettier --check *.html --print-width 100 --tab-width 4",
+    "prettier:check_js": "prettier --check js/*.js tests/*.js --print-width 100 --tab-width 4",
+    "prettier:format_html": "prettier --write *.html --print-width 100 --tab-width 4",
+    "prettier:format_js": "prettier --write js/*.js tests/*.js --print-width 100 --tab-width 4"
+  },
+  "dependencies": {
+    "jest": "^24.8.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.0",
+    "@stryker-mutator/core": "^3.1.0",
+    "@stryker-mutator/jest-runner": "^3.1.0",
+    "@stryker-mutator/javascript-mutator": "^3.1.0"
+  }
+}

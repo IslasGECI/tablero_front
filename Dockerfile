@@ -1,2 +1,6 @@
-FROM httpd:2
-COPY ./public_html/ /usr/local/apache2/htdocs/
+FROM node:lts
+WORKDIR /workdir
+COPY . .
+RUN npm install --global http-server
+EXPOSE 80
+CMD ["http-server", "./public_html", "--port", "80"]
