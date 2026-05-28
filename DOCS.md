@@ -22,6 +22,19 @@ Reproducibility dashboard page.
 
 ---
 
+## /checa-datos/
+
+Checa datos page for verifying trap positions against MapSource records.
+
+- **Parameters**: None
+- **Returns**: HTML page with a form to upload two files.
+- **Notes**:
+  - Requires JavaScript (`/js/main.js`) to submit the form and display results.
+  - Posts to `http://islasgeci.org:300/check_traps_ids` (janitor API).
+  - Form fields: positions file (`.xlsx`) and MapSource file (`.tsv`).
+
+---
+
 ## /js/json2table.js
 
 JavaScript module that populates the reproducibility table.

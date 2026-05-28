@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es-MX" data-theme="light">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="light" />
+        <title>Datos trampeo • GECI</title>
+        <link rel="icon" href="https://islas.org.mx/favicon.png" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css"
+        />
+        <script src="/js/main.js" defer></script>
+    </head>
+    <body>
+        <main class="container">
+            <h1 style="display: flex; align-items: flex-end; gap: 1rem">
+                Verificación de datos de trampeo<img
+                    src="https://islas.org.mx/img/logo.svg"
+                    alt=""
+                    style="height: 1.5em"
+                />
+            </h1>
+            <p>
+                Sube los dos archivos requeridos para verificar que las trampas en el archivo de
+                MapSource coinciden con las posiciones registradas.
+            </p>
+
+            <form id="check-form">
+                <div class="grid">
+                    <label for="positions_path">
+                        Archivo de posiciones (.xlsx)
+                        <input
+                            type="file"
+                            id="positions_path"
+                            name="positions_path"
+                            accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                            required
+                        />
+                        <small>Ej: IG_POSICION_TRAMPAS_*.xlsx</small>
+                    </label>
+
+                    <label for="mapsource_path">
+                        Archivo de MapSource (.tsv)
+                        <input
+                            type="file"
+                            id="mapsource_path"
+                            name="mapsource_path"
+                            accept=".tsv,.txt,text/tab-separated-values"
+                            required
+                        />
+                        <small>Ej: IG_MAPSOURCE_TRAMPA_*.tsv</small>
+                    </label>
+                </div>
+
+                <button type="submit" id="submit-btn" aria-busy="false">Verificar</button>
+            </form>
+
+            <div id="result"></div>
+        </main>
+    </body>
+</html>

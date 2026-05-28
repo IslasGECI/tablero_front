@@ -55,6 +55,7 @@ Runs on every push, scheduled daily, and on PRs to `develop`:
 - The reproducibility dashboard fetches data from `http://islasgeci.org:500/api/v1/dashboard` (external API).
 - The dashboard auto-refreshes every 600 seconds via `<meta http-equiv="refresh">`.
 - jQuery is loaded from `cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js` (latest 3.x).
+- The checa-datos page posts to `http://islasgeci.org:300/check_traps_ids` (janitor API).
 
 ## Infrastructure repos
 
