@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "prettier:check_html": "prettier --check *.html --print-width 100 --tab-width 4",
+    "prettier:check_html": "prettier --check **/*.html --print-width 100 --tab-width 4",
     "prettier:check_js": "prettier --check js/*.js tests/*.js --print-width 100 --tab-width 4",
-    "prettier:format_html": "prettier --write *.html --print-width 100 --tab-width 4",
+    "prettier:format_html": "prettier --write **/*.html --print-width 100 --tab-width 4",
     "prettier:format_js": "prettier --write js/*.js tests/*.js --print-width 100 --tab-width 4"
   },
   "dependencies": {
