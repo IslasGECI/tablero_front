@@ -12,8 +12,9 @@
 | Command | What it does |
 |---------|-------------|
 | `make setup` | `yarn` — install all dependencies |
-| `make check` | Format check (HTML + JS) via Prettier |
-| `make format` | Auto-format HTML + JS via Prettier |
+| `make check` | Format check (HTML + JS) via Prettier (`--print-width 100 --tab-width 4`) |
+| `make format` | Auto-format HTML + JS via Prettier with same flags |
+| `make check_status` | `curl --head --silent localhost \| grep "200 OK"` — health check |
 | `make tests` | Run Jest test suite |
 | `make mutants` | Run Stryker mutation testing |
 | `make clean` | Remove `node_modules` |
@@ -41,8 +42,11 @@ Runs on every push, scheduled daily, and on PRs to `develop`:
 ## Testing
 
 - Jest (no config file, uses defaults — discovers `**/?(*.)+(spec|test).[jt]s?(x)`).
-- Currently one dummy test.
+- Currently one placeholder test (`tests/tests_json2table.test.js`).
 - Stryker for mutation testing (`@stryker-mutator/jest-runner`).
+
+To run a focused command inside the CI container: `docker exec tablero_front_ci make <target>`.
+The container mounts the repo root at `/workdir` (read-write), so file edits are visible immediately.
 
 ## Front-end architecture
 

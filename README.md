@@ -14,6 +14,8 @@ Currently available dashboards:
 
 - [Reproducibilidad](/reproducibilidad/) — shows reproducibility status of
   GECI reports verified by `geci-testmake`.
+- [Checa datos](/checa-datos/) — upload trap position and MapSource files
+  to verify they match.
 
 ## How to use it
 
