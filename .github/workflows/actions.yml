@@ -1,11 +1,10 @@
-name: Tests
+name: Build and Publish Latest
 on:
   push:
-  schedule:
-    - cron: "0 0 * * *"
-  pull_request:
     branches:
     - develop
+  schedule:
+    - cron: "0 0 * * 0"
 
 jobs:
   actions:
@@ -14,7 +13,7 @@ jobs:
     - name: Copia repositorio
       uses: actions/checkout@main
     - name: Construye imagen
-      run: docker build --tag islasgeci/tablero_front:latest --tag islasgeci/tablero_front:${GITHUB_SHA:0:4} .
+      run: docker build --tag islasgeci/tablero_front:latest .
     - name: Corre contenedor
       run: make --makefile=build/Makefile up
     - name: Verifica el formato
@@ -32,5 +31,8 @@ jobs:
       run: echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
     - name: Sube latest a Docker Hub
       run: docker push islasgeci/tablero_front:latest
-    - name: Sube sha a Docker Hub
-      run: docker push islasgeci/tablero_front:${GITHUB_SHA:0:4}
+    - name: Sube tag semanal a Docker Hub
+      run: |
+        four_digit_week=$(date +%y%V)
+        docker tag islasgeci/tablero_front:latest islasgeci/tablero_front:${four_digit_week}
+        docker push islasgeci/tablero_front:${four_digit_week}
