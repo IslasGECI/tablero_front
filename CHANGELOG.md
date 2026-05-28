@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+
+- Replaced Bootstrap 4.3.1 with Pico CSS v2+ across all pages.
+- Upgraded jQuery from pinned 3.4.1 to the latest 3.x via jsDelivr.
+- Removed SRI hashes and `crossorigin` attributes from all CDN resources.
+
 ## [v0.2.0] - 2026-05-28
 
 ### Added

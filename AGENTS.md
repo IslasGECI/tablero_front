@@ -49,8 +49,12 @@ Runs on every push, scheduled daily, and on PRs to `develop`:
 - `public_html/index.html` — root portal page listing all front-ends.
 - Each front-end directory has its own `index.html`.
 - HTML files use absolute paths (e.g. `/js/json2table.js`) to reference shared assets.
+- CSS framework: Pico CSS v2+ (full version, CDN `@latest`), loaded via `<link>` in `<head>`.
+- All pages use `data-theme="light"` on `<html>` and wrapper `<main class="container">`.
+- External CDN resources never carry `integrity` (SRI) or `crossorigin` attributes.
 - The reproducibility dashboard fetches data from `http://islasgeci.org:500/api/v1/dashboard` (external API).
 - The dashboard auto-refreshes every 600 seconds via `<meta http-equiv="refresh">`.
+- jQuery is loaded from `cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js` (latest 3.x).
 
 ## Infrastructure repos
 
