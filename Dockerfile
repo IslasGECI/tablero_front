@@ -1,4 +1,4 @@
-FROM node:lts-buster
+FROM node:lts
 WORKDIR /workdir
 COPY . .
 RUN apt update && apt full-upgrade --yes
