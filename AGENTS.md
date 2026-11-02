@@ -45,7 +45,7 @@ Runs on every push, scheduled daily, and on PRs to `develop`:
 - Currently one placeholder test (`tests/tests_json2table.test.js`).
 - Stryker for mutation testing (`@stryker-mutator/jest-runner`).
 
-To run a focused command inside the CI container: `docker exec tablero_front_ci make <target>`.
+To run a focused command inside the development container: `docker exec tablero_front_dev make <target>`.
 The container mounts the repo root at `/workdir` (read-write), so file edits are visible immediately.
 
 ## Front-end architecture
